@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Dico by Dima Makarov</title>
+    <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+    <link rel="shortcut icon" href="../media/dictionary-2-svgrepo-com.svg" type="image/x-icon">
+    <script src="../scripts/script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <svg
+        class="header__logo"
+        width="24px"
+        height="24px"
+        version="1.1"
+        id="_x32_"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 512 512"
+        xml:space="preserve"
+        fill="#000000"
+        stroke="#000000"
+      >
+        <g id="SVGRepo_bgCarrier" stroke-width="0" />
+        <g
+          id="SVGRepo_tracerCarrier"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <g id="SVGRepo_iconCarrier">
+          <style type="text/css">
+            .st0 {
+              fill: #ffffff;
+            }
+          </style>
+          <g>
+            <path
+              class="st0"
+              d="M511.414,217.728c-1.902-9.034-8.242-16.503-16.852-19.856l-30.197-11.736v31.046l5.718,2.223 c2.58,1.008,4.483,3.25,5.048,5.953c0.565,2.712-0.263,5.538-2.223,7.497L279.14,426.609c-3.834,3.824-9.561,5.03-14.62,3.071 l-43.064-16.748v31.046l30.226,11.755c17.18,6.678,36.678,2.581,49.715-10.454l202.594-202.59 C510.519,236.161,513.317,226.77,511.414,217.728z"
+            />
+            <path
+              class="st0"
+              d="M30.914,299.684c1.356-18.895,7.423-43.649,28.466-42.481l192.2,74.751 c17.228,6.698,36.782,2.553,49.818-10.558l185.771-186.991c6.5-6.538,9.269-15.919,7.357-24.933 c-1.912-9.023-8.242-16.474-16.832-19.809L286.666,15.374c-17.228-6.698-36.791-2.553-49.818,10.559L21.646,242.538 C4.625,256.545,0,282.664,0,305.863c0,23.2,1.545,51.043,27.844,61.866l-6.198-1.451l57.942,22.532v-20.742 c0-3.372,0.42-6.668,1.107-9.88l-38.94-15.147C29.37,338.35,29.36,321.499,30.914,299.684z"
+            />
+            <path
+              class="st0"
+              d="M111.048,352.658c-4.088,4.107-6.381,9.645-6.381,15.41v96.076l40.823-8.741l50.888,44.383v-96.048 c0-5.793,2.298-11.331,6.386-15.419l16.272-16.276l-91.706-35.662L111.048,352.658z"
+            />
+          </g>
+        </g>
+      </svg>
+      <p class="header__name">Mon Dico by Dima Makarov</p>
+    </header>
+    <main class="app">
+      <div class="app__container">
+        <form class="form" id="form">
+          <input
+            title="fotmText"
+            type="text"
+            class="form__text"
+            name="search"
+            placeholder="type a word to search..."
+          />
+          <button title="submitButton" type="submit" class="form__submit">
+            <svg
+              class="form__icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"
+              />
+            </svg>
+          </button>
+        </form>
+        <section class="card card--hidden js-card">
+          <div class="card__top card__bloc">
+            <div class="card__word">
+              <h1 class="card__title js-card-title"></h1>
+              <p class="card__phonetic js-card-phonetic"></p>
+            </div>
+            <button
+              title="buttonCardPlayer"
+              class="card__player card__player--off js-card-button"
+              type="button"
+            >
+              <svg
+                class="card__sound card__sound--on"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z"
+                />
+              </svg>
+              <svg
+                class="card__sound card__sound--off"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z"
+                />
+              </svg>
+            </button>
+          </div>
+          <ul class="card__list card__bloc card__bloc--small js-card-list"></ul>
+        </section>
+      </div>
+    </main>
+
+    
+  </body>
+</html>
