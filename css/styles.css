@@ -88,7 +88,7 @@ body {
 
 .form__submit:hover {
   background-color: white;
-  transform: rotate(145deg);
+  transform: rotate(360deg);
 }
 
 .form__submit:hover path {
@@ -198,4 +198,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   opacity: 0.5;
+}
+
+.card__definition {
+  text-align: center;
 }
