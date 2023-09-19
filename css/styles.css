@@ -24,6 +24,10 @@ body {
   flex-direction: column;
 }
 
+li {
+  justify-content: space-between;
+}
+
 .header {
   display: flex;
   justify-content: flex-start;
