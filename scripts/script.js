@@ -15,9 +15,6 @@ MON PROGRAMME :
 */
 
 // Etape 1 ==> récupérer le mot
-
-
-
 const getWordToSearch = () => {
   const card = document.querySelector(".js-card")
   const myForm = document.querySelector("#form")
@@ -26,27 +23,29 @@ const getWordToSearch = () => {
     const myFormData = new FormData(myForm)
     let wordToSearch = myFormData.get("search")
     console.log("word: ", wordToSearch)
+    // Envoi vers l'API
     sendWordToApi(wordToSearch)
+    // Enlève la classe .card--hidden de .js-card
     card.classList.remove("card--hidden")
   })
 }
 
 // Etape 2 ==> envoyer le mot a l'API
-
 const sendWordToApi = (word) => {
   fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+    // Etape 3 ==> récupérer le JSON (la donnée) en lien avec mon mot
     .then((result) => result.json())
     .then((data) => {
-      // Etape 3 ==> récupérer le JSON (la donnée) en lien avec mon mot
       console.log("word data: ", data)
+      // Extraction de données
       const infosToShow = extractData(data[0])
-      // Etape 4 ==> ajouter le contenu dans le HTML
-
+      
       // MA VARIANTE INITIALE
       /* appendToHtml(infosToShow, "word", ".js-card-title")
       appendToHtml(infosToShow, "phonetics", ".js-card-phonetic")
       appendToHtml(infosToShow, "partOfSpeech", ".card__part-of-speech") */
-
+      
+      // Etape 4 ==> ajouter le contenu dans le HTML
       renderToHtml(infosToShow)
       console.log("all info", infosToShow)
     })
